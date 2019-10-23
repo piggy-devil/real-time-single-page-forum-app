@@ -5,18 +5,31 @@
          :data = question
          ></edit-question>
 
-        <show-question
+        <ShowQuestion
             v-else
             :data = question
-            ></show-question>
+            >
+        </ShowQuestion>
+        <v-container >
+            <Replies :question="question"/>
+            <new-reply :questionSlug="question.slug"></new-reply>
+        </v-container>
+
     </div>
 </template>
 
 <script>
 import ShowQuestion from './ShowQuestion'
 import EditQuestion from './EditQuestion'
+import Replies from '../reply/Replies'
+import NewReply from '../reply/NewReply'
 export default {
-    components:{ShowQuestion,EditQuestion},
+    components:{
+        ShowQuestion,
+        EditQuestion,
+        Replies,
+        NewReply
+    },
     data(){
         return {
             question:null,

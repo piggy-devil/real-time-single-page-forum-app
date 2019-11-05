@@ -53,7 +53,7 @@ class User {
     }
 
     admin() {
-        return this.id() == 14
+        return this.id() == 12
     }
 }
 
